@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
 
   def item_strong_params
      # need to check current_user part
-    params.require(:item).permit(:address, :capacity, :price, :description, :name, :lat, :lng)
+    params.require(:item).permit(:address, :capacity, :price, :description, :name, :lat, :lng, :photo)
   end
 
   def set_item
