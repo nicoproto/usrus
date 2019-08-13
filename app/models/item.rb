@@ -5,4 +5,6 @@ class Item < ApplicationRecord
   has_one :photo, dependent: :destroy
 
   validates :address, :capacity, :price, :description, :name, :lat, :lng, presence: true
+
+  mount_uploader :photo, PhotoUploader
 end

@@ -17,9 +17,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_strong_params)
+    @item.user = current_user
     if @item.save
+      flash[:success] = "Congratulations!  You're item has been listed."
       redirect_to item_path(@item)
     else
+      flash.now[:error] = "Please try again, some fields are incorrect."
       render :new
     end
   end
@@ -38,11 +41,10 @@ class ItemsController < ApplicationController
 
   def item_strong_params
      # need to check current_user part
-    params.require(:item).permit(:address, :capacity, :price, :description, :name, :lat, :lng, :current_user)
+    params.require(:item).permit(:address, :capacity, :price, :description, :name, :lat, :lng, :photo)
   end
 
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
