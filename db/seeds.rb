@@ -25,9 +25,9 @@ sy = User.create(email: "sy@gmail.com", password: "holla123")
 
 
 puts "Creating Items"
-item1 = Item.create(address:Faker::Address.street_address, capacity:rand(10), price: 69.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, lat: Faker::Address.latitude, lng: Faker::Address.longitude, user: sy, photo: 'https://res.cloudinary.com/syrashid/image/upload/v1565712692/ksdyd8cx5zw6fx8luwir.jpg')
-item2 = Item.create(address:Faker::Address.street_address, capacity:rand(10), price: 20.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, lat: Faker::Address.latitude, lng: Faker::Address.longitude, user: sy, photo: 'https://res.cloudinary.com/syrashid/image/upload/v1565712677/nifasq6gah6ppyylcw9x.jpg')
-item3 = Item.create(address:Faker::Address.street_address, capacity:rand(10), price: 100.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, lat: Faker::Address.latitude, lng: Faker::Address.longitude, user: sy, photo: 'https://res.cloudinary.com/syrashid/image/upload/v1565712669/pwgruu7es8ii8whadpmf.jpg')
+item1 = Item.create(address:Faker::Address.street_address, capacity:rand(10), price: 69.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, lat: Faker::Address.latitude, lng: Faker::Address.longitude, user: sy, remote_photo_url: 'https://res.cloudinary.com/syrashid/image/upload/v1565712692/ksdyd8cx5zw6fx8luwir.jpg')
+item2 = Item.create(address:Faker::Address.street_address, capacity:rand(10), price: 20.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, lat: Faker::Address.latitude, lng: Faker::Address.longitude, user: sy, remote_photo_url: 'https://res.cloudinary.com/syrashid/image/upload/v1565712677/nifasq6gah6ppyylcw9x.jpg')
+item3 = Item.create(address:Faker::Address.street_address, capacity:rand(10), price: 100.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, lat: Faker::Address.latitude, lng: Faker::Address.longitude, user: sy, remote_photo_url: 'https://res.cloudinary.com/syrashid/image/upload/v1565712669/pwgruu7es8ii8whadpmf.jpg')
 
 puts "Creating Bookings"
 startTime = Time.now
