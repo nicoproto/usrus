@@ -10,18 +10,19 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @photo = Photo.new
   end
 
   def edit
   end
 
   def create
-    item = Item.new(item_strong_params)
-    item.user = current_user
-    if item.save
-      redirect_to item_path(item)
+    @item = Item.new(item_strong_params)
+    @item.user = current_user
+    if @item.save
+      flash[:success] = "Congratulations!  You're item has been listed."
+      redirect_to item_path(@item)
     else
+      flash.now[:error] = "Please try again, some fields are incorrect."
       render :new
     end
   end
