@@ -1,2 +1,15 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<div class="m-5">
+  <div class="row justify-content-around">
+    <% @items.each do |item| %>
+      <div class="card m-2" style="width: 20rem; cursor: pointer;">
+        <img src="https://a0.muscache.com/im/pictures/02b1a8b0-08c5-46d6-aa94-f7425cf5a2c3.jpg?aki_policy=large" class="card-img-top" alt="<%= item.name %>">
+        <div class="card-body">
+          <h5 class="card-text font-weight-lighter"><%= item.name %></h5>
+          <h6 class="card-text font-weight-normal"><%= item.description %></h6>
+          <p class="card-text mb-0"><%= item.price%>$ / per Night</p>
+          <p class="card-text">Address: <%= item.address %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
