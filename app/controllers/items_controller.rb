@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @photo = Photo.new
   end
 
   def edit
@@ -38,11 +39,10 @@ class ItemsController < ApplicationController
 
   def item_strong_params
      # need to check current_user part
-    params.require(:item).permit(:address, :capacity, :price, :description, :name, :lat, :lng, :current_user)
+    params.require(:item).permit(:address, :capacity, :price, :description, :name, :lat, :lng)
   end
 
   def set_item
     @item = Item.find(params[:id])
   end
-  
 end
