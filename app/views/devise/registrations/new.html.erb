@@ -15,6 +15,26 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+
+    <!-- ADDED THIS FIELDS TO THE FORM -->
+    <%= f.input :first_name,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "first-name" }%>
+    <%= f.input :last_name,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "last-name" }%>
+    <%= f.input :avatar,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "avatar" }%>
+    <%= f.input :phone,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "phone" }%>
+    <!-- --------------------------- -->
+
   </div>
 
   <div class="form-actions">

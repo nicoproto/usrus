@@ -61,3 +61,4 @@ photo3 = Photo.create(data: "https://images.unsplash.com/photo-1494949360228-4e9
 
 puts "Seeding Process Complete"
 puts "Have fun with your pet rocks!"
+
