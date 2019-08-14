@@ -1,2 +1,5 @@
 <%= render 'form' %>
 
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "alert alert-warning alert-dismissible flash  #{key}" %>
+<% end %>
