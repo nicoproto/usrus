@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_strong_params)
     @item.user = current_user
     if @item.save
-      flash[:success] = "Congratulations!  You're item has been listed."
+      flash[:notice] = "Congratulations!  You're item has been listed."
       redirect_to item_path(@item)
     else
       flash.now[:error] = "Please try again, some fields are incorrect."
@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
   private
 
   def item_strong_params
-     # need to check current_user part
+    # need to check current_user part
     params.require(:item).permit(:address, :capacity, :price, :description, :name, :lat, :lng, :photo)
   end
 
