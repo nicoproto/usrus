@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.where(:capacity > params[:guests].to_i)
+    @items = Item.where("capacity >= ?", params[:guests])
   end
 
   def show
