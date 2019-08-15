@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to @item_path
+    redirect_to dashboard_path
   end
 
   private

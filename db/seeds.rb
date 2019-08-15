@@ -37,24 +37,24 @@ booking1 = Booking.create(item: item1, user: sy, start_date: startTime, end_date
 booking2 = Booking.create(item: item2, user: sy, start_date: startTime, end_date: endTime, status: true, total_price: ((endTime - startTime)/secondsInADay) * item2.price)
 booking3 = Booking.create(item: item3, user: sy, start_date: startTime, end_date: endTime, status: true, total_price: ((endTime - startTime)/secondsInADay) * item3.price)
 
-puts "Creating Amenities"
-amenity1 = Amenity.create(description: "Scary")
-amenity2 = Amenity.create(description: "Cookies")
-amenity3 = Amenity.create(description: "Flying")
+# puts "Creating Amenities"
+# amenity1 = Amenity.create(description: "Scary")
+# amenity2 = Amenity.create(description: "Cookies")
+# amenity3 = Amenity.create(description: "Flying")
 
-puts "Creating Item Ammenities Join Relations"
+# puts "Creating Item Ammenities Join Relations"
 
-3.times do
-  ItemAmenity.create(item: item1, amenity: amenity1)
-end
+# 3.times do
+#   ItemAmenity.create(item: item1, amenity: amenity1)
+# end
 
-3.times do
-  ItemAmenity.create(item: item2, amenity: amenity2)
-end
+# 3.times do
+#   ItemAmenity.create(item: item2, amenity: amenity2)
+# end
 
-3.times do
-  ItemAmenity.create(item: item3, amenity: amenity3)
-end
+# 3.times do
+#   ItemAmenity.create(item: item3, amenity: amenity3)
+# end
 
 puts "Seeding Process Complete"
 puts "Have fun with your monsters!"
