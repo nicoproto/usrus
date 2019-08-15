@@ -1,0 +1,20 @@
+<h2>SOMEGHINT</h2>
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      Booking number: <%= @booking.user_id %><%= @booking.item_id %><%= @booking.total_price %>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <h4>Booking status: <%= @booking.status %></h4>
+        <br>
+        <h5>Order information:</h5>
+        <p>Rented monster: <%= @item.name %></p>
+        <p>From: <%= @booking.start_date %></p>
+        <p>To: <%= @booking.end_date %></p>
+        <p>Total price: <%= @booking.total_price %> €</p>
+        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+      </blockquote>
+    </div>
+  </div>
+</div>
