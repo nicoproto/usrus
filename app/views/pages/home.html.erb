@@ -1,34 +1,24 @@
-<div class="hero">
-  <div class="row">
-    <div class="homeform col-xs-12 col-lg-5 offset-lg-7">
-      <h1>Find yourself some useless shit...</h1>
+<div class="page d-flex">
+  <div class="solid">
+    <div class="solid-card d-flex flex-column">
+      <div class="text">
+        <h1>At Loch Ness we believe in second chances</h1>
+        <h1>...even for monsters</h1>
+      </div>
       <form action="/items" method="get">
-        <div class="form-group">
-          <label for="inputLocation">Where</label>
-          <input type="text" name="location" class="form-control" id="inputLocation" placeholder="Anywhere">
-        </div>
-        <div class="form-group">
-          <label for="inputCheckin">Rental Start</label>
-          <input type="date" name="checkin" id="inputCheckin" class="form-control" placeholder="Rental start">
-        </div>
-        <div class="form-group">
-          <label for="inputCheckout">Rental End</label>
-          <input type="date" name="checkout" id="inputCheckout" class="form-control" placeholder="Rental end">
-        </div>
-        <div class="form-group">
-          <label for="inputGuests">Guests</label>
-          <select name="guests" id="inputGuests">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-          </select>
-        </div>
-        <input type="submit" value="Search" class="btn btn-primary">
+          <div class="d-flex">
+            <input type="text" name="location" class="form-control" id="inputLocation" placeholder="Search for monsters near you...">
+            <input type="submit" value="Search" class="btn btn-primary">
+          </div>
       </form>
+    </div>
+
+  </div>
+  <div class="outline">
+    <div class= "outline-card">
+      <h1>Make a friend</h1>
+      <h1>Find a monster...</h1>
+      <%= image_tag "https://res.cloudinary.com/syrashid/image/upload/v1565867833/monster_copy_bvatf1.png", height: 250, class: "mt-5"%>
     </div>
   </div>
 </div>
