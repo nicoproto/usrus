@@ -5,6 +5,20 @@ class DashboardsController < ApplicationController
    # @monster = Monster.find(params[:id])
   end
 
+  def destroy
+    @item.destroy
+    redirect_to @items_path
+  end
+
+  def edit
+    raise
+      @item = item.find(params[:id])
+  end
+
+  def update
+    @item = item.find(params[:id])
+  end
+end
 
 
   # def update
@@ -20,7 +34,6 @@ class DashboardsController < ApplicationController
   # def set_item
   #   @monster = Monster.find(params[:id])
   # end
-end
 
 #Find the list of monsters and show it to the host
 
