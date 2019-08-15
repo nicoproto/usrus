@@ -12,22 +12,23 @@ puts "Beginning Seeding Process"
 puts "Deleting All Old Seeds"
 ItemAmenity.destroy_all
 Booking.destroy_all
+Photo.destroy_all
 Item.destroy_all
 User.destroy_all
 
 puts "Creating New User Seeds"
 
-chad = User.create(email: "chad@gmgemail.com", password: "password")
-kaveh = User.create(email: "kaveh@gmail.com", password: "password")
-nico = User.create(email: "nico@gmail.com", password: "password")
+chad = User.create(email: "chad@gmgemail.com", password: "password", remote_avatar_url: 'https://avatars0.githubusercontent.com/u/29354309?v=4')
+kaveh = User.create(email: "kaveh@gmail.com", password: "password", remote_avatar_url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/wnf628rqyln9aciahxcp.jpg')
+nico = User.create(email: "nico@gmail.com", password: "password", remote_avatar_url: 'https://avatars0.githubusercontent.com/u/43278026?v=4')
 puts "Creating the only landlord, the late great Sy Rashid"
-sy = User.create(email: "sy@gmail.com", password: "holla123")
+sy = User.create(email: "sy@gmail.com", password: "holla123", remote_avatar_url: 'https://avatars2.githubusercontent.com/u/6656014?v=4')
 
 
 puts "Creating Items"
-item1 = Item.create(address:Faker::Address.street_address, capacity:rand(10), price: 69.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, lat: Faker::Address.latitude, lng: Faker::Address.longitude, user: sy, remote_photo_url: 'https://res.cloudinary.com/syrashid/image/upload/v1565712692/ksdyd8cx5zw6fx8luwir.jpg')
-item2 = Item.create(address:Faker::Address.street_address, capacity:rand(10), price: 20.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, lat: Faker::Address.latitude, lng: Faker::Address.longitude, user: sy, remote_photo_url: 'https://res.cloudinary.com/syrashid/image/upload/v1565712677/nifasq6gah6ppyylcw9x.jpg')
-item3 = Item.create(address:Faker::Address.street_address, capacity:rand(10), price: 100.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, lat: Faker::Address.latitude, lng: Faker::Address.longitude, user: sy, remote_photo_url: 'https://res.cloudinary.com/syrashid/image/upload/v1565712669/pwgruu7es8ii8whadpmf.jpg')
+item1 = Item.create(address:Faker::Address.street_address, price: 69.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, user: sy, remote_photo_url: 'https://i.pinimg.com/originals/3a/73/40/3a734077ce6636193d7f924f15004366.jpg')
+item2 = Item.create(address:Faker::Address.street_address, price: 20.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, user: sy, remote_photo_url: 'http://jesusgilhernandez.com/wp-content/uploads/2014/03/cookie-monster.jpg')
+item3 = Item.create(address:Faker::Address.street_address, price: 100.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, user: sy, remote_photo_url: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/72e3a9d7-8d5e-4cd7-b2c6-134f9b12addc/d6eq0mr-cb0e24e3-939b-4268-9f0a-848d1b2d87f4.png/v1/fill/w_894,h_894,strp/dragonite_flying_vector_by_konylice_d6eq0mr-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTAwMCIsInBhdGgiOiJcL2ZcLzcyZTNhOWQ3LThkNWUtNGNkNy1iMmM2LTEzNGY5YjEyYWRkY1wvZDZlcTBtci1jYjBlMjRlMy05MzliLTQyNjgtOWYwYS04NDhkMWIyZDg3ZjQucG5nIiwid2lkdGgiOiI8PTUwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.a55eeWKsSfQoZeST4pZQyYXPnpTp8DHsMabsttFcUBk')
 
 puts "Creating Bookings"
 startTime = Time.now
@@ -37,9 +38,9 @@ booking2 = Booking.create(item: item2, user: sy, start_date: startTime, end_date
 booking3 = Booking.create(item: item3, user: sy, start_date: startTime, end_date: endTime, status: true, total_price: ((endTime - startTime)/secondsInADay) * item3.price)
 
 puts "Creating Amenities"
-amenity1 = Amenity.create(description: "fakeAmenity")
-amenity2 = Amenity.create(description: "fakeAmenity")
-amenity3 = Amenity.create(description: "fakeAmenity")
+amenity1 = Amenity.create(description: "Scary")
+amenity2 = Amenity.create(description: "Cookies")
+amenity3 = Amenity.create(description: "Flying")
 
 puts "Creating Item Ammenities Join Relations"
 
@@ -55,11 +56,6 @@ end
   ItemAmenity.create(item: item3, amenity: amenity3)
 end
 
-puts "Adding Photo URL"
-photo1 = Photo.create(data: "https://images.unsplash.com/photo-1542683549-cf229d5ea6f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80", item: item1)
-photo2 = Photo.create(data: "https://images.unsplash.com/photo-1544098281-073ae35c98b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80", item: item2)
-photo3 = Photo.create(data: "https://images.unsplash.com/photo-1494949360228-4e9bde560065?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80", item: item3)
-
 puts "Seeding Process Complete"
-puts "Have fun with your pet rocks!"
+puts "Have fun with your monsters!"
 
