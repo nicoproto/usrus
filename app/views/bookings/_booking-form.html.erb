@@ -1,5 +1,5 @@
 <div class="form border border-secondary rounded-lg p-3">
-  <%= simple_form_for [@item, @booking] do |d| %>
+  <%= simple_form_for [@item, @booking], url: booking_path(@booking) do |d| %>
     <div class="row">
       <div class="col-sm-6">
         <%= d.input :start_date, html5: true %>

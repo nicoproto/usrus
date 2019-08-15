@@ -1,0 +1,40 @@
+#map {
+  // width: 90%;
+  // height: 90vh;
+  // position: sticky;
+  // top: 70px;
+  // height: 100vh;
+  // position: sticky;
+  // top: 0;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.mapboxgl-ctrl-top-right {
+display: none !important;
+}
+
+@media (max-width: 1200px) {
+  #map {
+    display: block;
+  }
+}
+
+@media (max-width: 976px) {
+  #map {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  #map {
+    display: none;
+  }
+}
