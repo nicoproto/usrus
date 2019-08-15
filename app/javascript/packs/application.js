@@ -11,8 +11,10 @@ initAutocomplete();
 
 // NEED TO PUT IT IN ANOTHER FILE
 
-const date_from = document.getElementById("date-from")
-const date_to = document.getElementById("date-to")
+const date_from = document.getElementById("booking_start_date")
+
+const date_to = document.getElementById("booking_end_date")
+
 const total_price = document.getElementById("total-price")
 const item_price = document.getElementById("item-price")
 
@@ -30,9 +32,12 @@ function datediff(date_from, date_to) {
 function calculateTotalPrice(event) {
   const rent_days = datediff(parseDate(date_from.value), parseDate(date_to.value))
   total_price.innerText = rent_days * item_price.dataset.price
+  console.log(rent_days * item_price.dataset.price)
 
 }
 
+
+date_from.addEventListener("change", calculateTotalPrice)
 date_to.addEventListener("change", calculateTotalPrice)
 
 // -------------------

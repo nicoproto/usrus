@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.where("user_id = ?", current_user.id)
   end
-  
+
   def show
     @booking = Booking.find(params[:id])
     @item = Item.find(@booking.item_id)
@@ -18,8 +18,10 @@ class BookingsController < ApplicationController
   def destroy
     Booking.destroy(params[:id])
     redirect_to bookings_path
+  end
 
   def create
+    raise
     @booking = Booking.new(booking_strong_params)
 
     @item = Item.find(params[:item_id])
@@ -51,3 +53,4 @@ class BookingsController < ApplicationController
     return to_date.mjd - from_date.mjd
   end
 end
+
