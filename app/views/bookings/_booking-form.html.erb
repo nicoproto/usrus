@@ -1,0 +1,22 @@
+<div class="form border border-secondary rounded-lg p-3">
+  <%= simple_form_for [@item, @booking], url: booking_path(@booking) do |d| %>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= d.input :start_date, html5: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= d.input :end_date, html5: true %>
+      </div>
+      <div class="col-sm-6 m-auto d-flex align-middle">
+        <p class="align-middle m-0" style="display: inline"><strong>Total: &nbsp</strong> </p>
+        <h5 id="total-price" class="align-middle m-0" style="display: inline"><%= 2 * @item.price %></h5>
+        <h5 class="align-middle m-0" style="display: inline"> €</h5>
+      </div>
+    </div>
+    <div class="row m-0">
+      <%= d.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
