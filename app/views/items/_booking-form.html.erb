@@ -1,19 +1,13 @@
 <div class="form border border-secondary rounded-lg p-3">
-  <form action="/items" method="post">
+  <%= simple_form_for [@item, @booking] do |d| %>
     <div class="row">
       <div class="col-sm-6">
-        <div class="form-group">
-          <span class="form-label">From:</span>
-          <input id="date-from" class="form-control" type="date" required="">
-        </div>
+        <%= d.input :start_date, id: "date-from" %>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-6">
-        <div class="form-group">
-          <span class="form-label">To:</span>
-          <input id="date-to" class="form-control" type="date" required="">
-        </div>
+        <%= d.input :end_date %>
       </div>
       <div class="col-sm-6 m-auto d-flex align-middle">
         <p class="align-middle m-0" style="display: inline"><strong>Total: &nbsp</strong> </p>
@@ -22,9 +16,7 @@
       </div>
     </div>
     <div class="row m-0">
-      <button class="btn btn-primary btn-lg btn-block">Hire <%= @item.name %>!</button>
+      <%= d.submit class: "btn btn-primary" %>
     </div>
-  </form>
+  <% end %>
 </div>
-
-<form action=""></form>
