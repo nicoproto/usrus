@@ -1,10 +1,10 @@
 <div class="form border border-secondary rounded-lg p-3">
-  <form>
+  <form action="/items" method="post">
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group">
           <span class="form-label">From:</span>
-          <input class="form-control" type="date" required="">
+          <input id="date-from" class="form-control" type="date" required="">
         </div>
       </div>
     </div>
@@ -12,12 +12,13 @@
       <div class="col-sm-6">
         <div class="form-group">
           <span class="form-label">To:</span>
-          <input class="form-control" type="date" required="">
+          <input id="date-to" class="form-control" type="date" required="">
         </div>
       </div>
       <div class="col-sm-6 m-auto d-flex align-middle">
         <p class="align-middle m-0" style="display: inline"><strong>Total: &nbsp</strong> </p>
-        <h5 class="align-middle m-0" style="display: inline"><%= 2 * @item.price %> €</h5>
+        <h5 id="total-price" class="align-middle m-0" style="display: inline"><%= 2 * @item.price %></h5>
+        <h5 class="align-middle m-0" style="display: inline"> €</h5>
       </div>
     </div>
     <div class="row m-0">
@@ -25,3 +26,5 @@
     </div>
   </form>
 </div>
+
+<form action=""></form>
