@@ -3,13 +3,7 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group">
-          <span class="form-label">Check In</span>
-          <input class="form-control" type="date" required="">
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="form-group">
-          <span class="form-label">Check out</span>
+          <span class="form-label">From:</span>
           <input class="form-control" type="date" required="">
         </div>
       </div>
@@ -17,26 +11,17 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group">
-          <span class="form-label">Guests</span>
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-          </select>
-          <span class="select-arrow"></span>
+          <span class="form-label">To:</span>
+          <input class="form-control" type="date" required="">
         </div>
       </div>
       <div class="col-sm-6 m-auto d-flex align-middle">
-            <p class="align-middle m-0" style="display: inline"><strong>Total: &nbsp</strong> </p>
-            <h5 class="align-middle m-0" style="display: inline"><%= 2 * @item.price %> €</h5>
+        <p class="align-middle m-0" style="display: inline"><strong>Total: &nbsp</strong> </p>
+        <h5 class="align-middle m-0" style="display: inline"><%= 2 * @item.price %> €</h5>
       </div>
     </div>
     <div class="row m-0">
-      <button class="btn btn-primary btn-lg btn-block">Book useless shit!</button>
+      <button class="btn btn-primary btn-lg btn-block">Hire <%= @item.name %>!</button>
     </div>
   </form>
 </div>
