@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @items = Item.where("capacity >= ?", params[:guests])
+    @items = Item.all
   end
 
   def show

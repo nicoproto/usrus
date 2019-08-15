@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   has_many :amenities, through: :item_amenities
   # has_one :photo, dependent: :destroy
 
-  validates :address, :capacity, :price, :description, :name, :photo, presence: true
+  validates :address, :price, :description, :name, :photo, presence: true
 
   mount_uploader :photo, PhotoUploader
 end
