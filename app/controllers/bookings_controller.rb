@@ -1,4 +1,9 @@
 class BookingsController < ApplicationController
+  def show
+    @booking = Booking.find(params[:id])
+    @item = Item.find(@booking.item_id)
+  end
+
   def new
   end
 
@@ -18,7 +23,7 @@ class BookingsController < ApplicationController
     @booking.total_price = @item.price * rent_days
 
     if @booking.save
-      redirect_to item_path(@item)
+      redirect_to booking_path(@booking)
     else
       render :new
     end
