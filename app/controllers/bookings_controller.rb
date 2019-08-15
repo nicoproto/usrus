@@ -1,11 +1,23 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.where("user_id = ?", current_user.id)
+  end
+  
   def show
     @booking = Booking.find(params[:id])
     @item = Item.find(@booking.item_id)
   end
 
-  def new
+  def edit
+    @booking = Booking.find(params[:id])
   end
+
+  def update
+  end
+
+  def destroy
+    Booking.destroy(params[:id])
+    redirect_to bookings_path
 
   def create
     @booking = Booking.new(booking_strong_params)
