@@ -1,5 +1,5 @@
 <div class="margin">
-  <nav class="navbar navbar-dark bg-dark">
+  <nav class="navbar navbar-dark bg-dark navbar-filter">
     <a class="navbar-brand" href="#">Never expand</a>
 
     <div class="custom-control custom-switch mr-4" data-toggle="collapse" data-target="#map" aria-expanded="false" aria-controls="map">
@@ -7,18 +7,17 @@
       <label class="custom-control-label text-white" for="customSwitch1">Close map</label>
     </div>
   </nav>
-
   <div class="d-flex">
-    <div class="row justify-content-start mx-4">
+    <div class="cards">
       <% @items.each do |item| %>
-        <div class="card m-2" style="width: 20rem; ">
+        <div class="card">
           <img src='<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>' class="card-img-top" alt="<%= item.name %>">
           <div class="card-body">
             <h5 class="card-text font-weight-lighter">
               <%= link_to item.name, item_path(item), class: "stretched-link" %>
               </h5>
             <h6 class="card-text font-weight-normal"><%= item.description %></h6>
-            <p class="card-text mb-0"><%= item.price%>$ / per Night</p>
+            <p class="card-text mb-0"><%= item.price %>$ / per Night</p>
             <p class="card-text">Address: <%= item.address %></p>
           </div>
         </div>
@@ -29,6 +28,7 @@
       class=""
       style="width: 90%; height: 100vh"
       data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>
