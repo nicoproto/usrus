@@ -6,12 +6,16 @@
     <div class="col-lg-6 col-md-6 col-xs-12">
       <h4><%= @item.name %></h4>
       <div class="mt-3 mb-3">
-        <h5 style="display: inline"><%= @item.price %> € </h5>
+        <h5 id="item-price" data-price="<%= @item.price %>" style="display: inline"><%= @item.price %> € </h5>
         <p style="display: inline">/ per night</p>
       </div>
       <p><strong>Description:</strong> <%= @item.description %></p>
+      <div class="mt-3 mb-3">
+        <p style="display: inline"> guests (capacity)</p>
+      </div>
       <div>
         <%= render 'booking-form' %>
       </div>
   </div>
 </div>
+
