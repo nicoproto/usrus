@@ -29,7 +29,7 @@ puts "Creating Items"
 item1 = Item.create(address: "Barcelona", price: 69.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, user: sy, remote_photo_url: 'https://i.pinimg.com/originals/3a/73/40/3a734077ce6636193d7f924f15004366.jpg')
 item2 = Item.create(address: "Madrid", price: 20.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, user: sy, remote_photo_url: 'http://jesusgilhernandez.com/wp-content/uploads/2014/03/cookie-monster.jpg')
 item3 = Item.create(address: "London", price: 100.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, user: sy, remote_photo_url: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/72e3a9d7-8d5e-4cd7-b2c6-134f9b12addc/d6eq0mr-cb0e24e3-939b-4268-9f0a-848d1b2d87f4.png/v1/fill/w_894,h_894,strp/dragonite_flying_vector_by_konylice_d6eq0mr-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTAwMCIsInBhdGgiOiJcL2ZcLzcyZTNhOWQ3LThkNWUtNGNkNy1iMmM2LTEzNGY5YjEyYWRkY1wvZDZlcTBtci1jYjBlMjRlMy05MzliLTQyNjgtOWYwYS04NDhkMWIyZDg3ZjQucG5nIiwid2lkdGgiOiI8PTUwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.a55eeWKsSfQoZeST4pZQyYXPnpTp8DHsMabsttFcUBk')
-
+item4 = Item.create(address: "London", price: 20.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, user: sy, remote_photo_url: 'https://vignette.wikia.nocookie.net/howtotrainyourdragon/images/e/ef/Dragon_01_toothless.png/revision/latest?cb=20190211201924')
 puts "Creating Bookings"
 startTime = Time.now
 endTime = Time.now + (rand 2..7 * secondsInADay)
