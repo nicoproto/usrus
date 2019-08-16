@@ -1,0 +1,12 @@
+function updateDom()  {
+
+  const cards = document.getElementById('cards-container');
+
+  const html = '<%= j render "items_partial", items: @items %>';
+  cards.innerHTML = html
+
+}
+
+
+updateDom()
+

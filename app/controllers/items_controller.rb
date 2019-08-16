@@ -17,6 +17,21 @@ class ItemsController < ApplicationController
     end
   end
 
+  def filterasc
+    @items = Item.order(price: :asc)
+    if params[:location].present?
+      @items = @items.near(params[:location], 100)
+    end
+
+  end
+
+  def filterdsc
+    @items = Item.order(price: :desc)
+    if params[:location].present?
+      @items = @items.near(params[:location], 100)
+    end
+  end
+
   def show
     @booking = Booking.new
   end
