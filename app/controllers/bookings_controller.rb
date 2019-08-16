@@ -1,11 +1,15 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where("user_id = ?", current_user.id)
+    @pending_bookings = Booking.where("status = ? AND user_id = ?", "Pending", current_user.id)
+    @accepted_bookings = Booking.where("status = ? AND user_id = ?", "Accepted", current_user.id)
+    @rejected_bookings = Booking.where("status = ? AND user_id = ?", "Rejected", current_user.id)
   end
 
   def show
     @booking = Booking.find(params[:id])
     @item = Item.find(@booking.item_id)
+
   end
 
   def edit
