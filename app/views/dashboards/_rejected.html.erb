@@ -1,0 +1,13 @@
+<% @rejected_bookings.each do |booking| %>
+  <div class="card-product m-3">
+    <img src=<%= cl_image_path booking.item.photo %>>
+    <div class="card-product-infos">
+      <h4><%= booking.item.name %></h4>
+      <h2><%= booking.item.address %></h2>
+      <h2><%= booking.total_price.round(2) %>€</h2>
+      <p><%= booking.start_date %> >> <%= booking.end_date %></p>
+      <%= link_to "Edit booking", edit_booking_path(booking), class: "btn btn-primary"  %>
+      <%= link_to "Delete booking", dashboard_path, method: :delete, data: {confirm: "Are you sure you want to delete this booking?"}, class: "btn-outline-primary"  %>
+    </div>
+  </div>
+  <% end %>
