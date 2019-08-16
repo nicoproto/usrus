@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboards#show'
   resources :items do
     resources :bookings, only: [:new, :create]
+    resources :reviews, only: [ :index, :new, :create ]
   end
+  resources :reviews, only: [ :show ]
   get '/ascitems', to: 'items#filterasc'
   get '/dscitems', to: 'items#filterdsc'
   resources :bookings, only: [:index, :show, :edit, :update, :destroy]

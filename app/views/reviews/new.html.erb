@@ -1,0 +1,12 @@
+<div class="container offset-1">
+  <%= simple_form_for [@item, @review] do |f| %>
+    <h1 class="text-center">New Review</h1>
+    <div class="col-6 offset-3">
+      <%= f.input :rating %>
+    </div>
+    <div class="col-6 offset-3">
+      <%= f.input :description %>
+    </div>
+    <%= f.submit "add a review", class: "btn btn-primary offset-5" %>
+  <% end %>
+</div>

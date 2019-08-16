@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many :amenities, through: :item_amenities
+  has_many :reviews, dependent: :destroy
   # has_one :photo, dependent: :destroy
 
   geocoded_by :address
