@@ -1,0 +1,12 @@
+.primarybtn {
+  color: white;
+  padding: 4px 18px;
+  border-radius: 4px;
+  background: $green;
+  transition: background 0.3s ease;
+}
+
+.primarybtn:hover {
+  background: rgba(49, 85, 69, 0.9);
+  color: white;
+}

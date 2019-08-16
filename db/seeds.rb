@@ -48,9 +48,9 @@ item12 = Item.create(address: "Istanbul", price: 188, description: "This monster
 puts "Creating Bookings"
 startTime = Time.now
 endTime = Time.now + (rand 2..7 * secondsInADay)
-booking1 = Booking.create(item: item1, user: sy, start_date: startTime, end_date: endTime, status: true, total_price: ((endTime - startTime)/secondsInADay) * item1.price)
-booking2 = Booking.create(item: item2, user: sy, start_date: startTime, end_date: endTime, status: true, total_price: ((endTime - startTime)/secondsInADay) * item2.price)
-booking3 = Booking.create(item: item3, user: sy, start_date: startTime, end_date: endTime, status: true, total_price: ((endTime - startTime)/secondsInADay) * item3.price)
+booking1 = Booking.create(status: "Pending", item: item1, user: sy, start_date: startTime, end_date: endTime, status: true, total_price: ((endTime - startTime)/secondsInADay) * item1.price)
+booking2 = Booking.create(status: "Accepted", item: item2, user: sy, start_date: startTime, end_date: endTime, status: true, total_price: ((endTime - startTime)/secondsInADay) * item2.price)
+booking3 = Booking.create(status: "Rejected", item: item3, user: sy, start_date: startTime, end_date: endTime, status: true, total_price: ((endTime - startTime)/secondsInADay) * item3.price)
 
 # puts "Creating Amenities"
 # amenity1 = Amenity.create(description: "Scary")
