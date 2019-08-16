@@ -24,8 +24,7 @@ const priceCalc = () => {
 
   function calculateTotalPrice(event) {
     const rent_days = datediff(parseDate(date_from.value), parseDate(date_to.value))
-    total_price.innerText = rent_days * item_price.dataset.price
-    console.log(rent_days * item_price.dataset.price)
+    total_price.innerText = Math.round(rent_days * item_price.dataset.price)
 
   }
 
