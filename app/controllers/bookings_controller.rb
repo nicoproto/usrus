@@ -60,6 +60,21 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accept_booking
+    @booking = Booking.find(params[:id])
+    @booking.status = "Accepted"
+    @booking.save
+    redirect_to dashboard_path
+  end
+
+  def reject_booking
+    @booking = Booking.find(params[:id])
+    @booking.status = "Rejected"
+    @booking.save
+    redirect_to dashboard_path
+  end
+
+
   def booking_strong_params
     params.require(:booking).permit(:start_date, :end_date)
   end

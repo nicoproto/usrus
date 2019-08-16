@@ -2,7 +2,9 @@ class DashboardsController < ApplicationController
 
   def show
     @items = current_user.items
-   # @monster = Monster.find(params[:id])
+    @pending_bookings = Booking.where("status = ? AND user_id = ?", "Pending", current_user.id)
+    @accepted_bookings = Booking.where("status = ? AND user_id = ?", "Accepted", current_user.id)
+    @rejected_bookings = Booking.where("status = ? AND user_id = ?", "Rejected", current_user.id)
   end
 
   def destroy
@@ -19,7 +21,6 @@ class DashboardsController < ApplicationController
     @item = item.find(params[:id])
   end
 end
-
 
   # def update
   #   @item.update(item_strong_params)

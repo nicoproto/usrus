@@ -1,9 +1,71 @@
-<h1>My list of item</h1>
-<% @items.each do |item| %>
-  <h2><%= item.name %></h2>
-  <p><%= item.address %></p>
-  <%= link_to "Delete", item_path(item), method: :delete, class: "btn btn-primary" %>
-  <%= link_to "Update", edit_item_path(item), class: "btn btn-secondary" %>
 
-<% end %>
+<!-- ACCEPTED -->
+<div class="container mt-5">
+  <br>
+  <h1>Accepted</h1>
+  <%= @accepted_bookings.each do |booking| %>
+  <div class="card-product m-3">
+    <img src=<%= cl_image_path booking.item.photo %>>
+    <div class="card-product-infos">
+      <h4><%= booking.item.name %></h4>
+      <h2><%= booking.item.address %></h2>
+      <%= link_to "Edit booking", edit_booking_path(booking), class: "btn btn-primary"  %>
+      <%= link_to "Delete booking", booking_path(booking), method: :delete, data: {confirm: "Are you sure you want to delete this booking?"}, class: "btn-outline-primary"  %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<!-- PENDING -->
+<div class="container mt-5">
+  <br>
+  <h1>Pending</h1>
+  <%= @pending_bookings.each do |booking| %>
+  <div class="card-product m-3">
+    <img src=<%= cl_image_path booking.item.photo %>>
+    <div class="card-product-infos">
+      <h4><%= booking.item.name %></h4>
+      <h2><%= booking.item.address %></h2>
+      <%= link_to "Edit booking", edit_booking_path(booking), class: "btn btn-primary"  %>
+      <%= link_to "Delete booking", booking_path(booking), method: :delete, data: {confirm: "Are you sure you want to delete this booking?"},  class: "btn-outline-primary"  %>
+      <%= link_to "Accept booking", accept_path(booking), method: :patch, action: "accept_booking", data: {confirm: "Are you sure you want to accept this booking?"} , class: "btn-outline-primary"  %>
+      <%= link_to "Reject booking", reject_path(booking), method: :patch, action: "reject_booking", data: {confirm: "Are you sure you want to reject this booking?"} , class: "btn-outline-primary"  %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<!-- REJECTED -->
+<div class="container mt-5">
+  <br>
+  <h1>Rejected</h1>
+  <%= @rejected_bookings.each do |booking| %>
+  <div class="card-product m-3">
+    <img src=<%= cl_image_path booking.item.photo %>>
+    <div class="card-product-infos">
+      <h4><%= booking.item.name %></h4>
+      <h2><%= booking.item.address %></h2>
+      <%= link_to "Edit booking", edit_booking_path(booking), class: "btn btn-primary"  %>
+      <%= link_to "Delete booking", booking_path(booking), method: :delete, data: {confirm: "Are you sure you want to delete this booking?"}, class: "btn-outline-primary"  %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<!-- MY MONSTERS -->
+<div class="container mt-5">
+  <br>
+  <h1>My Monsters</h1>
+  <%= @items.each do |item| %>
+  <div class="card-product m-3">
+    <img src=<%= cl_image_path item.photo %>>
+    <div class="card-product-infos">
+      <h4><%= item.name %></h4>
+      <h2><%= item.address %></h2>
+      <%= link_to "Edit Item", edit_item_path(item), class: "btn btn-primary"  %>
+      <%= link_to "Delete Item", item_path(item), method: :delete, class: "btn-outline-primary"  %>
+    </div>
+  </div>
+  <% end %>
+</div>
 
