@@ -16,18 +16,10 @@
 <div class="container mt-5">
   <br>
   <h1>Accepted</h1>
-  <% @accepted_bookings.each do |booking| %>
-  <div class="card-product m-3">
-    <img src=<%= cl_image_path booking.item.photo %>>
-    <div class="card-product-infos">
-      <h4><%= booking.item.name %></h4>
-      <h2><%= booking.item.address %></h2>
-      <h2><%= booking.total_price.round(2) %>€</h2>
-      <p><%= booking.start_date %> >> <%= booking.end_date %></p>
-      <%= link_to "Edit booking", edit_booking_path(booking), class: "btn btn-primary"  %>
-      <%= link_to "Delete booking", dashboard_path, method: :delete, data: {confirm: "Are you sure you want to delete this booking?"}, class: "btn-outline-primary"  %>
-    </div>
-  </div>
+  <% if @accepted_bookings.count > 0 %>
+    <%= render 'accepted' %>
+  <% else %>
+    <p>You don't have any accepted bookings.</p>
   <% end %>
 </div>
 
@@ -35,18 +27,10 @@
 <div class="container mt-5">
   <br>
   <h1>Rejected</h1>
-  <% @rejected_bookings.each do |booking| %>
-  <div class="card-product m-3">
-    <img src=<%= cl_image_path booking.item.photo %>>
-    <div class="card-product-infos">
-      <h4><%= booking.item.name %></h4>
-      <h2><%= booking.item.address %></h2>
-      <h2><%= booking.total_price.round(2) %>€</h2>
-      <p><%= booking.start_date %> >> <%= booking.end_date %></p>
-      <%= link_to "Edit booking", edit_booking_path(booking), class: "btn btn-primary"  %>
-      <%= link_to "Delete booking", dashboard_path, method: :delete, data: {confirm: "Are you sure you want to delete this booking?"}, class: "btn-outline-primary"  %>
-    </div>
-  </div>
+  <% if @rejected_bookings.count > 0 %>
+    <%= render 'rejected' %>
+  <% else %>
+    <p>You don't have any accepted bookings.</p>
   <% end %>
 </div>
 
@@ -54,16 +38,10 @@
 <div class="container mt-5">
   <br>
   <h1>My Monsters</h1>
-  <% @items.each do |item| %>
-  <div class="card-product m-3">
-    <img src=<%= cl_image_path item.photo %>>
-    <div class="card-product-infos">
-      <h4><%= item.name %></h4>
-      <h2><%= item.address %></h2>
-      <%= link_to "Edit Item", edit_item_path(item), class: "btn btn-primary"  %>
-      <%= link_to "Delete Item", item_path(item), method: :delete, class: "btn-outline-primary"  %>
-    </div>
-  </div>
+  <% if @items.count > 0 %>
+    <%= render 'myItems' %>
+  <% else %>
+    <p>You don't have any monsters.</p>
   <% end %>
 </div>
 
