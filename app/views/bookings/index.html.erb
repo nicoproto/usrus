@@ -1,19 +1,32 @@
-
+<!-- PENDING -->
 <div class="container mt-5">
   <br>
-  <h1>My Bookings</h1>
-  <%= @bookings.each do |booking| %>
-    <div class="card-product m-3">
-      <img src=<%= cl_image_path booking.item.photo %>>
-      <div class="card-product-infos">
-        <h4><%= booking.item.name %></h4>
-        <h2><%= booking.total_price.round(2) %>€</h2>
-        <p><%= booking.start_date %> >> <%= booking.end_date %></p>
-        <%= link_to "Edit Booking", edit_booking_path(booking), class: "btn btn-primary"  %>
-        <%= link_to "Delete Booking", booking_path(booking), method: :delete, class: "btn-outline-primary"  %>
-      </div>
-    </div>
+  <h1>Pending</h1>
+  <% if @pending_bookings.count > 0 %>
+    <%= render 'pending' %>
+  <% else %>
+    <p>You don't have any pending bookings.</p>
   <% end %>
 </div>
 
+<!-- ACCEPTED -->
+<div class="container mt-5">
+  <br>
+  <h1>Accepted</h1>
+  <% if @accepted_bookings.count > 0 %>
+    <%= render 'accepted' %>
+  <% else %>
+    <p>You don't have any accepted bookings.</p>
+  <% end %>
+</div>
 
+<!-- REJECTED -->
+<div class="container mt-5">
+  <br>
+  <h1>Rejected</h1>
+  <% if @rejected_bookings.count > 0 %>
+    <%= render 'accepted' %>
+  <% else %>
+    <p>You don't have any rejected bookings.</p>
+  <% end %>
+</div>

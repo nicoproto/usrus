@@ -1,0 +1,11 @@
+  <% @items.each do |item| %>
+  <div class="card-product m-3">
+    <img src=<%= cl_image_path item.photo %>>
+    <div class="card-product-infos">
+      <h4><%= item.name %></h4>
+      <h2><%= item.address %></h2>
+      <%= link_to "Edit Item", edit_item_path(item), class: "btn btn-primary"  %>
+      <%= link_to "Delete Item", item_path(item), method: :delete, class: "btn-outline-primary"  %>
+    </div>
+  </div>
+  <% end %>

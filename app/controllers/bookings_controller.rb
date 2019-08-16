@@ -1,11 +1,15 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where("user_id = ?", current_user.id)
+    @pending_bookings = Booking.where("status = ? AND user_id = ?", "Pending", current_user.id)
+    @accepted_bookings = Booking.where("status = ? AND user_id = ?", "Accepted", current_user.id)
+    @rejected_bookings = Booking.where("status = ? AND user_id = ?", "Rejected", current_user.id)
   end
 
   def show
     @booking = Booking.find(params[:id])
     @item = Item.find(@booking.item_id)
+
   end
 
   def edit
@@ -59,6 +63,21 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+
+  def accept_booking
+    @booking = Booking.find(params[:id])
+    @booking.status = "Accepted"
+    @booking.save
+    redirect_to dashboard_path
+  end
+
+  def reject_booking
+    @booking = Booking.find(params[:id])
+    @booking.status = "Rejected"
+    @booking.save
+    redirect_to dashboard_path
+  end
+
 
   def booking_strong_params
     params.require(:booking).permit(:start_date, :end_date)

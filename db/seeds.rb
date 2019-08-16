@@ -26,6 +26,7 @@ sy = User.create(email: "sy@gmail.com", password: "holla123", remote_avatar_url:
 
 
 puts "Creating Items"
+
 # item1 = Item.create(address: "Barcelona", price: 69.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, user: sy, remote_photo_url: 'https://i.pinimg.com/originals/3a/73/40/3a734077ce6636193d7f924f15004366.jpg')
 # item2 = Item.create(address: "Madrid", price: 20.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, user: sy, remote_photo_url: 'http://jesusgilhernandez.com/wp-content/uploads/2014/03/cookie-monster.jpg')
 # item3 = Item.create(address: "London", price: 100.69, description: Faker::TvShows::MichaelScott.quote, name: Faker::Name.name, user: sy, remote_photo_url: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/72e3a9d7-8d5e-4cd7-b2c6-134f9b12addc/d6eq0mr-cb0e24e3-939b-4268-9f0a-848d1b2d87f4.png/v1/fill/w_894,h_894,strp/dragonite_flying_vector_by_konylice_d6eq0mr-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTAwMCIsInBhdGgiOiJcL2ZcLzcyZTNhOWQ3LThkNWUtNGNkNy1iMmM2LTEzNGY5YjEyYWRkY1wvZDZlcTBtci1jYjBlMjRlMy05MzliLTQyNjgtOWYwYS04NDhkMWIyZDg3ZjQucG5nIiwid2lkdGgiOiI8PTUwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.a55eeWKsSfQoZeST4pZQyYXPnpTp8DHsMabsttFcUBk')
@@ -43,8 +44,6 @@ item9 = Item.create(address: "Rome", price: 125.69, description: "This monster h
 item10 = Item.create(address: "Paris", price: 170.69, description: "This is a monster that is dangerous because it can mimic a human's voice. It can use the voices of loved ones to lure victims into traps that it has set up... Skills: Lightning Arrow, Immortality", name: "Cyclops", user: sy, remote_photo_url: 'http://getwallpapers.com/wallpaper/full/b/6/a/500920.jpg')
 item11 = Item.create(address: "Valencia", price: 190.69, description: "This monster her ghastly tendency to feast on human blood and flesh, more than warrants her place as number seven on our list... Skills: Explosive Arrow, Ice Shot", name: "Sphinx", user: sy, remote_photo_url: 'https://gallery.mailchimp.com/e0f5618a41f76b17c22005aec/images/cy.gif')
 item12 = Item.create(address: "Istanbul", price: 188.69, description: "This monster is so feaurious and has the ability to grow stronger with time, age, and the consumption of human blood... Skills: Immortality, golden horn, super punch", name: "Cycsphira", user: sy, remote_photo_url: 'https://images.unsplash.com/photo-1509248961158-e54f6934749c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1922&q=80')
-
-
 
 puts "Creating Bookings"
 startTime = Time.now

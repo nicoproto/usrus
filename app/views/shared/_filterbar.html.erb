@@ -1,0 +1,19 @@
+  <nav class="navbar navbar-dark bg-dark navbar-filter">
+    <div class="filter">
+      <h1 class="navbar-brand">Sort by:</h1>
+
+      <div class="dropdown">
+        <button onclick="dropFilter()" class="dropbtn btn-outline-primary">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content" style="z-index: 2">
+          <%= link_to "Price $->$$$", ascitems_path(location: params[:location]), class: "drop-down-item", remote: true %>
+          <%= link_to "Price $$$->$", dscitems_path(location: params[:location]), class: "drop-down-item", remote: true %>
+        </div>
+      </div>
+    </div>
+
+    ​
+    <div class="custom-control custom-switch mr-4" data-toggle="collapse" data-target="#map" aria-expanded="false" aria-controls="map">
+      <input type="checkbox" class="custom-control-input" id="customSwitch1">
+      <label class="custom-control-label text-white" for="customSwitch1">Close map</label>
+    </div>
+  </nav>

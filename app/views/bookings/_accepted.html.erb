@@ -1,0 +1,11 @@
+<% @accepted_bookings.each do |booking| %>
+  <div class="card-product m-3">
+    <img src=<%= cl_image_path booking.item.photo %>>
+    <div class="card-product-infos">
+      <h4><%= booking.item.name %></h4>
+      <h2><%= booking.item.address %></h2>
+      <h2><%= booking.total_price.round(2) %>€</h2>
+      <p><%= booking.start_date %> >> <%= booking.end_date %></p>
+    </div>
+  </div>
+<% end %>
