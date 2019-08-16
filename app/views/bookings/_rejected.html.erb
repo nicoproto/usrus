@@ -6,8 +6,8 @@
       <h2><%= booking.item.address %></h2>
       <h2><%= booking.total_price.round(2) %>€</h2>
       <p><%= booking.start_date %> >> <%= booking.end_date %></p>
-      <%= link_to "Edit booking", edit_booking_path(booking), class: "btn btn-primary"  %>
-      <%= link_to "Delete booking", dashboard_path, method: :delete, data: {confirm: "Are you sure you want to delete this booking?"}, class: "btn-outline-primary"  %>
+      <%= link_to "Edit", edit_booking_path(booking), class: "primarybtn"  %>
+      <%= link_to "Delete", dashboard_path, method: :delete, data: {confirm: "Are you sure you want to delete this booking?"}, class: "primarybtn"  %>
     </div>
   </div>
 <% end %>
