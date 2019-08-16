@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index, :show, :edit, :update, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  patch '/bookings/:id/accept', to: 'bookings#accept_booking', as: :accept
+  patch '/bookings/:id/reject', to: 'bookings#reject_booking', as: :reject
 end
 
 
