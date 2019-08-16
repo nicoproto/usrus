@@ -1,0 +1,13 @@
+<% items.each do |item| %>
+  <div class="card">
+    <img src='<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>' class="card-img-top" alt="<%= item.name %>">
+    <div class="card-body">
+      <h5 class="card-text font-weight-lighter">
+        <%= link_to item.name, item_path(item), class: "stretched-link" %>
+        </h5>
+      <h6 class="card-text font-weight-normal"><%= item.description %></h6>
+      <p class="card-text mb-0"><%= item.price %>$ / per Night</p>
+      <p class="card-text">Address: <%= item.address %></p>
+    </div>
+  </div>
+<% end %>
