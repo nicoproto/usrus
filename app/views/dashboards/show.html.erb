@@ -1,47 +1,47 @@
 <!-- PENDING -->
-<div class="container mt-5">
+<div class="container mt-5 ml-0">
   <br>
-  <h1>Pending</h1>
+  <h1 class="offset-3">Pending</h1>
 
   <% if @pending_bookings.count > 0 %>
     <%= render 'pending' %>
   <% else %>
-    <p>You don't have any pending bookings.</p>
+    <p class="offset-3">You don't have any pending bookings.</p>
   <% end %>
 
 
 </div>
 
 <!-- ACCEPTED -->
-<div class="container mt-5">
+<div class="container mt-5 ml-0">
   <br>
-  <h1>Accepted</h1>
+  <h1 class="offset-3">Accepted</h1>
   <% if @accepted_bookings.count > 0 %>
     <%= render 'accepted' %>
   <% else %>
-    <p>You don't have any accepted bookings.</p>
+    <p class="offset-3">You don't have any accepted bookings.</p>
   <% end %>
 </div>
 
 <!-- REJECTED -->
-<div class="container mt-5">
+<div class="container mt-5 ml-0">
   <br>
-  <h1>Rejected</h1>
+  <h1 class="offset-3">Rejected</h1>
   <% if @rejected_bookings.count > 0 %>
     <%= render 'rejected' %>
   <% else %>
-    <p>You don't have any accepted bookings.</p>
+    <p class="offset-3">You don't have any accepted bookings.</p>
   <% end %>
 </div>
 
 <!-- MY MONSTERS -->
-<div class="container mt-5">
+<div class="container mt-5 ml-0">
   <br>
-  <h1>My Monsters</h1>
+  <h1 class="offset-3">My Monsters</h1>
   <% if @items.count > 0 %>
     <%= render 'myItems' %>
   <% else %>
-    <p>You don't have any monsters.</p>
+    <p class="offset-3">You don't have any monsters.</p>
   <% end %>
 </div>
 
