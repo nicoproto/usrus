@@ -3,15 +3,16 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @items = Item.all
-    @items = Item.geocoded
+    if params[:location].present?
+      @items = Item.near(params[:location], 100)
+    else
+      @items = Item.geocoded
+    end
 
     @markers = @items.map do |item|
       {
         lat: item.latitude,
         lng: item.longitude
-        # infoWindow: render_to_string(partial: "info_window", locals: { item: item })
-        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
   end
