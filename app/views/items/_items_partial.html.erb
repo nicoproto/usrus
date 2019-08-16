@@ -1,13 +1,13 @@
 <% items.each do |item| %>
-  <div class="card">
+  <div class="card shadow-sm">
     <img src='<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>' class="card-img-top" alt="<%= item.name %>">
     <div class="card-body">
-      <h5 class="card-text font-weight-lighter">
+      <h5 class="card-text font-weight-bolder">
         <%= link_to item.name, item_path(item), class: "stretched-link" %>
         </h5>
-      <h6 class="card-text font-weight-normal"><%= item.description %></h6>
-      <p class="card-text mb-0"><%= item.price %>$ / per Night</p>
-      <p class="card-text">Address: <%= item.address %></p>
+      <h6 class="card-text font-weight-light"><%= item.description %></h6>
+      <p class="card-text mb-0"> <strong><%= item.price %> € </strong>/ per Night</p>
+      <p class="card-text pt-3"><strong>Address:</strong> <%= item.address %></p>
     </div>
   </div>
 <% end %>
